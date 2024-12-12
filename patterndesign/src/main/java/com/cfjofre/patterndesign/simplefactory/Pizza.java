@@ -1,14 +1,36 @@
 package com.cfjofre.patterndesign.simplefactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Pizza {
 
-    protected abstract void prepare();
+    String name;
+    String dough;
+    String sauce;
+    List<String> toppings = new ArrayList<>();
 
-    protected abstract void bake();
+    void prepare() {
+        System.out.println("Preparing " + name);
+        System.out.println("Tossing dough...");
+        System.out.println("Adding toppings: ");
+        toppings.forEach(topping -> System.out.println(" " + topping));
+    }
 
-    protected abstract void cut();
+    void bake(){
+        System.out.println("Bake for 25 minutes at 350");
+    };
 
-    protected abstract void box();
+    void cut(){
+        System.out.println("Cutting the pizza into diagonal slices");
+    };
 
-    
-} 
+    void box(){
+        System.out.println("Place pizza in official PizzaStore box");
+    };
+
+    public String getName(){
+        return this.name;
+    }
+
+}
