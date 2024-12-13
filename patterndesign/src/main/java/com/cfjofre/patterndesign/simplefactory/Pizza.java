@@ -1,35 +1,41 @@
 package com.cfjofre.patterndesign.simplefactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Cheese;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Clams;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Dough;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Pepperoni;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Sauce;
+import com.cfjofre.patterndesign.simplefactory.ingredients.Veggies;
 
 public abstract class Pizza {
 
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<>();
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clams;
 
-    void prepare() {
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding toppings: ");
-        toppings.forEach(topping -> System.out.println(" " + topping));
-    }
+    abstract void prepare();
 
-    void bake(){
+    void bake() {
         System.out.println("Bake for 25 minutes at 350");
     };
 
-    void cut(){
+    void cut() {
         System.out.println("Cutting the pizza into diagonal slices");
     };
 
-    void box(){
+    void box() {
         System.out.println("Place pizza in official PizzaStore box");
     };
 
-    public String getName(){
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
         return this.name;
     }
 

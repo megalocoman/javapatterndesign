@@ -1,29 +1,19 @@
 package com.cfjofre.patterndesign.simplefactory;
 
-public class CheesePizza  extends Pizza{
+public class CheesePizza extends Pizza {
+
+    PizzaIngredientFactory ingredientFactory;
+
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
 
     @Override
     protected void prepare() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prepare'");
-    }
-
-    @Override
-    protected void bake() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'bake'");
-    }
-
-    @Override
-    protected void cut() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cut'");
-    }
-
-    @Override
-    protected void box() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'box'");
+            System.out.println("preparing "+ name);
+            dough = ingredientFactory.createDough();
+            sauce = ingredientFactory.createSauce();
+            cheese = ingredientFactory.createCheese();
     }
 
 }
