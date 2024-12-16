@@ -1,5 +1,7 @@
 package com.cfjofre.patterndesign.simplefactory;
 
+import com.cfjofre.patterndesign.simplefactory.ingredients.NYPizzaIngredientFactory;
+
 public class NYPizzaStore extends PizzaStore {
 
     @Override
@@ -7,13 +9,29 @@ public class NYPizzaStore extends PizzaStore {
 
         Pizza pizza = null;
 
-        pizza = switch (type) {
-            case "cheese" -> new NYStyleCheesePizza();
-            case "pepperoni" -> new NYStylePeperoniPizza();
-            case "clam" -> new NYStyleClamPizza();
-            case "vegie" -> new NYStyleVegiePizza();
-            default -> null;
-        };
+        PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+
+        switch (type) {
+            case "cheese": {
+                pizza = new CheesePizza(ingredientFactory);
+                pizza.setName("New York City cheese Pizza");
+            } ;
+            case "pepperoni": {
+                pizza = new Peperonipizza();
+                pizza.setName("New York City pepperoni Pizza");
+
+            } ;
+            case "clam" : {
+                pizza = new ClamPizza(ingredientFactory);
+                pizza.setName("New York City clam Pizza");
+            };
+            case "veggie" : {
+                pizza = new VegiePizza(ingredientFactory);
+                pizza.setName("New York City veggie Pizza");
+            };
+            default : pizza = null;
+        }
+        ;
 
         return pizza;
 

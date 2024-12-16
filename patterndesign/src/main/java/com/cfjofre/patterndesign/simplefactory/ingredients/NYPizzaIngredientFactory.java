@@ -2,7 +2,7 @@ package com.cfjofre.patterndesign.simplefactory.ingredients;
 
 import com.cfjofre.patterndesign.simplefactory.PizzaIngredientFactory;
 
-public class NYPizzaIngredientFactory  implements PizzaIngredientFactory{
+public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 
     @Override
     public Dough createDough() {
@@ -11,7 +11,7 @@ public class NYPizzaIngredientFactory  implements PizzaIngredientFactory{
 
     @Override
     public Sauce createSauce() {
-       return new MarinaraSauce();
+        return new MarinaraSauce();
     }
 
     @Override
@@ -21,7 +21,7 @@ public class NYPizzaIngredientFactory  implements PizzaIngredientFactory{
 
     @Override
     public Veggies[] createVeggies() {
-        Veggies veggies[] = {new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
+        Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
         return veggies;
     }
 
@@ -34,5 +34,5 @@ public class NYPizzaIngredientFactory  implements PizzaIngredientFactory{
     public Clams createClams() {
         return new FreshClams();
     }
-    
+
 }
