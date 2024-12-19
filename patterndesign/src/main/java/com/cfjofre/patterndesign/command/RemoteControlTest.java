@@ -3,9 +3,9 @@ package com.cfjofre.patterndesign.command;
 public class RemoteControlTest {
     public static void main(String[] args) {
         SimpleRemoteControl remote = new SimpleRemoteControl();
-        Light light = new Light();
+        Light light = new Light("");
         LightOnCommand lightOn = new LightOnCommand(light);
-        GarageDoor garageDoor = new GarageDoor();
+        GarageDoor garageDoor = new GarageDoor("");
         GarageDoorOpenCommand garageDoorOpen  = new GarageDoorOpenCommand(garageDoor);
 
 

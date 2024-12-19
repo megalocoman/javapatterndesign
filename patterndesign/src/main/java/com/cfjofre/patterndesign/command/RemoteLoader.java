@@ -3,7 +3,7 @@ package com.cfjofre.patterndesign.command;
 public class RemoteLoader {
 
     public static void main(String[] args) {
-        var remoteControl = new RemoteControl();
+        var remoteControl = new RemoteControlWithUndo();
 
         Light livingRoomLight = new Light("Living Room");
         Light kitchenLight = new Light("Kitchen");

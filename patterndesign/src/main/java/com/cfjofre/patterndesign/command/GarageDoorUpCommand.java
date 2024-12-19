@@ -13,6 +13,12 @@ public class GarageDoorUpCommand implements Command{
         garageDoor.lightOn();
         garageDoor.up();
     }
+
+    @Override
+    public void undo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'undo'");
+    }
     
 
 

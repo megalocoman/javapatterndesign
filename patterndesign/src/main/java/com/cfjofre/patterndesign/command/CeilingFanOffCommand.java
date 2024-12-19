@@ -13,4 +13,10 @@ public class CeilingFanOffCommand implements Command {
         ceilingFan.off();
     }
 
+    @Override
+    public void undo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'undo'");
+    }
+
 }
