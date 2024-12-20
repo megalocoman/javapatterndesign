@@ -15,4 +15,10 @@ public class StereoOnWithCDCommand implements Command {
         stereo.setVolume(11);
     }
 
+    @Override
+    public void undo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'undo'");
+    }
+
 }

@@ -13,7 +13,7 @@ public class Stereo {
     }
 
     public void off() {
-        System.out.println("Stereo is on");
+        System.out.println("Stereo is off");
     }
 
     public void setCd() {
